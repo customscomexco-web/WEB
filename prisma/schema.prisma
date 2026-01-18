@@ -1,0 +1,256 @@
+// This is your Prisma schema file,
+// learn more about it in the docs: https://pris.ly/d/prisma-schema
+
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "postgresql"
+  url      = env("DATABASE_URL")
+}
+
+model User {
+  id           String   @id @default(cuid())
+  name         String
+  email        String   @unique
+  passwordHash String
+  role         UserRole @default(EDITOR)
+  createdAt    DateTime @default(now())
+  updatedAt    DateTime @updatedAt
+
+  @@map("users")
+}
+
+enum UserRole {
+  ADMIN
+  EDITOR
+}
+
+model SiteSettings {
+  id           String   @id @default("default")
+  siteName     String   @default("Mi Sitio")
+  logoUrl      String?
+  primaryColor String   @default("#006d8c")
+  whatsappNumber String?
+  calendlyUrl  String?
+  address      String?
+  phone        String?
+  socialLinks  Json?    // { facebook, instagram, linkedin, etc }
+  createdAt    DateTime @default(now())
+  updatedAt    DateTime @updatedAt
+
+  @@map("site_settings")
+}
+
+model Page {
+  id           String   @id @default(cuid())
+  slug         String   @unique
+  title        String
+  seoTitle     String?
+  seoDescription String?
+  ogImageUrl   String?
+  backgroundImageUrl String?
+  published    Boolean  @default(true)
+  sections     Section[]
+  createdAt    DateTime @default(now())
+  updatedAt    DateTime @updatedAt
+
+  @@map("pages")
+}
+
+model Section {
+  id        String   @id @default(cuid())
+  pageId    String
+  page      Page     @relation(fields: [pageId], references: [id], onDelete: Cascade)
+  type      SectionType
+  order     Int      @default(0)
+  visible   Boolean  @default(true)
+  content   Json     // Estructura específica según type
+  createdAt DateTime @default(now())
+  updatedAt DateTime @updatedAt
+
+  @@map("sections")
+  @@index([pageId, order])
+}
+
+enum SectionType {
+  HERO
+  FEATURES
+  SERVICES_GRID
+  TIMELINE
+  TESTIMONIALS
+  FAQ
+  CONTACT_BLOCK
+  IMPORTADORA_TEASER
+  RICH_TEXT
+  STATS
+  CTA_BAND
+  IMAGE_TEXT
+}
+
+model Service {
+  id          String   @id @default(cuid())
+  title       String
+  description String?
+  icon        String?
+  order       Int      @default(0)
+  visible     Boolean  @default(true)
+  createdAt   DateTime @default(now())
+  updatedAt   DateTime @updatedAt
+
+  @@map("services")
+}
+
+model Post {
+  id            String      @id @default(cuid())
+  title         String
+  slug          String      @unique
+  excerpt       String?
+  contentRichText Json?     // TipTap JSON
+  coverImageUrl String?
+  publishedAt   DateTime?
+  seoTitle      String?
+  seoDescription String?
+  ogImageUrl    String?
+  status        PostStatus  @default(DRAFT)
+  createdAt     DateTime    @default(now())
+  updatedAt     DateTime    @updatedAt
+
+  @@map("posts")
+}
+
+enum PostStatus {
+  DRAFT
+  PUBLISHED
+}
+
+model Category {
+  id          String    @id @default(cuid())
+  name        String
+  slug        String    @unique
+  description String?
+  imageUrl    String?
+  order       Int       @default(0)
+  visible     Boolean   @default(true)
+  products    Product[]
+  createdAt   DateTime  @default(now())
+  updatedAt   DateTime  @updatedAt
+
+  @@map("categories")
+}
+
+model Product {
+  id                String    @id @default(cuid())
+  name              String
+  slug              String     @unique
+  descriptionRichText Json?    // TipTap JSON
+  shortDescription  String?
+  images            Json       // Array de strings
+  categoryId        String?
+  category          Category?  @relation(fields: [categoryId], references: [id], onDelete: SetNull)
+  tags              Json?      // Array de strings
+  priceRetail       Float
+  priceWholesale    Float?
+  stock             Int        @default(0)
+  sku               String?
+  featured          Boolean    @default(false)
+  active            Boolean    @default(true)
+  createdAt         DateTime   @default(now())
+  updatedAt         DateTime   @updatedAt
+
+  @@map("products")
+  @@index([categoryId])
+  @@index([featured])
+  @@index([active])
+}
+
+model WholesaleLead {
+  id          String            @id @default(cuid())
+  companyName String
+  cuit        String?
+  name        String
+  email       String
+  whatsapp    String?
+  city        String?
+  notes       String?
+  status      WholesaleStatus   @default(NEW)
+  createdAt   DateTime          @default(now())
+  updatedAt   DateTime          @updatedAt
+
+  @@map("wholesale_leads")
+}
+
+enum WholesaleStatus {
+  NEW
+  CONTACTED
+  APPROVED
+  REJECTED
+}
+
+model Order {
+  id          String      @id @default(cuid())
+  customerName String
+  email       String
+  whatsapp    String?
+  type        OrderType
+  items       Json        // Array de { productId, name, quantity, price }
+  total       Float
+  status      OrderStatus @default(NEW)
+  address     String?
+  notes       String?
+  createdAt   DateTime    @default(now())
+  updatedAt   DateTime    @updatedAt
+
+  @@map("orders")
+  @@index([status])
+  @@index([type])
+}
+
+enum OrderType {
+  RETAIL
+  WHOLESALE
+}
+
+enum OrderStatus {
+  NEW
+  IN_PROGRESS
+  DONE
+  CANCELLED
+}
+
+model MediaFile {
+  id        String   @id @default(cuid())
+  url       String
+  alt       String?
+  size      Int?
+  mime      String?
+  createdAt DateTime @default(now())
+
+  @@map("media_files")
+}
+
+model ContactQuery {
+  id          String          @id @default(cuid())
+  name        String
+  email       String
+  phone       String?
+  whatsapp    String?
+  company     String?
+  message     String
+  status      ContactStatus   @default(NEW)
+  createdAt   DateTime        @default(now())
+  updatedAt   DateTime        @updatedAt
+
+  @@map("contact_queries")
+  @@index([status])
+  @@index([createdAt])
+}
+
+enum ContactStatus {
+  NEW
+  CONTACTED
+  RESOLVED
+  ARCHIVED
+}
+

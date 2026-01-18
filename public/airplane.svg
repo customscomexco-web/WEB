@@ -1,0 +1,56 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 300" fill="none">
+  <!-- Main Fuselage Body -->
+  <ellipse cx="400" cy="150" rx="350" ry="35" fill="#2C3E50"/>
+  <ellipse cx="400" cy="150" rx="350" ry="30" fill="#34495E"/>
+  
+  <!-- Nose Section -->
+  <ellipse cx="750" cy="150" rx="40" ry="30" fill="#1A252F"/>
+  <path d="M750 120 Q780 150 750 180" stroke="#1A252F" stroke-width="3" fill="none"/>
+  
+  <!-- Tail Section -->
+  <ellipse cx="50" cy="150" rx="30" ry="40" fill="#2C3E50"/>
+  
+  <!-- Main Wings - Large and Prominent -->
+  <path d="M250 150 L150 50 L100 60 L150 80 L250 150" fill="#2C3E50" opacity="0.95"/>
+  <path d="M250 150 L150 250 L100 240 L150 220 L250 150" fill="#2C3E50" opacity="0.95"/>
+  
+  <!-- Wing Details -->
+  <path d="M150 50 L100 60 L150 80" stroke="#1A252F" stroke-width="2" fill="none"/>
+  <path d="M150 250 L100 240 L150 220" stroke="#1A252F" stroke-width="2" fill="none"/>
+  
+  <!-- Wing Markings -->
+  <line x1="120" y1="55" x2="120" y2="75" stroke="#87CEEB" stroke-width="3" opacity="0.7"/>
+  <line x1="120" y1="225" x2="120" y2="245" stroke="#87CEEB" stroke-width="3" opacity="0.7"/>
+  
+  <!-- Engines under wings -->
+  <ellipse cx="180" cy="150" rx="20" ry="50" fill="#1A252F"/>
+  <ellipse cx="180" cy="150" rx="12" ry="35" fill="#34495E"/>
+  <ellipse cx="620" cy="150" rx="20" ry="50" fill="#1A252F"/>
+  <ellipse cx="620" cy="150" rx="12" ry="35" fill="#34495E"/>
+  
+  <!-- Windows along fuselage -->
+  <circle cx="300" cy="150" r="5" fill="#87CEEB" opacity="0.9"/>
+  <circle cx="350" cy="150" r="5" fill="#87CEEB" opacity="0.9"/>
+  <circle cx="400" cy="150" r="5" fill="#87CEEB" opacity="0.9"/>
+  <circle cx="450" cy="150" r="5" fill="#87CEEB" opacity="0.9"/>
+  <circle cx="500" cy="150" r="5" fill="#87CEEB" opacity="0.9"/>
+  <circle cx="550" cy="150" r="5" fill="#87CEEB" opacity="0.9"/>
+  <circle cx="600" cy="150" r="5" fill="#87CEEB" opacity="0.9"/>
+  <circle cx="650" cy="150" r="5" fill="#87CEEB" opacity="0.9"/>
+  
+  <!-- Horizontal Stabilizer (Tail) -->
+  <path d="M50 150 L20 120 L15 150 L20 180 Z" fill="#2C3E50"/>
+  <path d="M50 150 L20 120 L15 150 L20 180" stroke="#1A252F" stroke-width="2" fill="none"/>
+  
+  <!-- Vertical Stabilizer (Tail Fin) -->
+  <path d="M50 150 L35 80 L40 150 L35 220" fill="#34495E"/>
+  <path d="M35 80 L40 150 L35 220" stroke="#1A252F" stroke-width="2" fill="none"/>
+  
+  <!-- Wing Tips -->
+  <ellipse cx="100" cy="60" rx="12" ry="8" fill="#1A252F"/>
+  <ellipse cx="100" cy="240" rx="12" ry="8" fill="#1A252F"/>
+  
+  <!-- Landing Gear (subtle) -->
+  <ellipse cx="200" cy="180" rx="8" ry="15" fill="#1A252F" opacity="0.6"/>
+  <ellipse cx="600" cy="180" rx="8" ry="15" fill="#1A252F" opacity="0.6"/>
+</svg>
