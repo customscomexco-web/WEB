@@ -152,7 +152,7 @@ export default function EditProductPage() {
     const currentImages = Array.isArray(product.images) ? product.images : []
     setProduct({
       ...product,
-      images: currentImages.filter((_, index) => index !== indexToRemove),
+      images: currentImages.filter((_: any, index: number) => index !== indexToRemove),
     })
   }
 
