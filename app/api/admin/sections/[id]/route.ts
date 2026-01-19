@@ -70,6 +70,7 @@ export async function PUT(
 
     const section = await prisma.section.update({
       where: { id: params.id },
+      data: updateData,
       include: {
         page: {
           select: { slug: true },
