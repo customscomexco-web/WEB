@@ -26,7 +26,7 @@ async function main() {
     update: {},
     create: {
       id: 'default',
-      siteName: 'Vicky - Comercio Exterior',
+      siteName: "Custom's & Comex CO",
       primaryColor: '#006d8c',
       whatsappNumber: '+5491112345678',
       address: 'Buenos Aires, Argentina',
@@ -47,7 +47,7 @@ async function main() {
     create: {
       slug: 'home',
       title: 'Inicio',
-      seoTitle: 'Vicky - Comercio Exterior | Importación y Exportación',
+      seoTitle: "Custom's & Comex CO | Importación y Exportación",
       seoDescription: 'Servicios profesionales de comercio exterior. Importación, exportación y asesoramiento integral.',
       published: true,
     },
@@ -71,7 +71,7 @@ async function main() {
     create: {
       slug: 'sobre-mi',
       title: 'Sobre Mí',
-      seoTitle: 'Sobre Mí - Vicky',
+      seoTitle: "Sobre Mí - Custom's & Comex CO",
       seoDescription: 'Conoce más sobre mi experiencia en comercio exterior.',
       published: true,
     },
@@ -83,7 +83,7 @@ async function main() {
     create: {
       slug: 'contacto',
       title: 'Contacto',
-      seoTitle: 'Contacto - Vicky',
+      seoTitle: "Contacto - Custom's & Comex CO",
       seoDescription: 'Contáctanos para más información sobre nuestros servicios.',
       published: true,
     },

@@ -12,7 +12,7 @@ const inter = Inter({
 })
 
 export const metadata: Metadata = {
-  title: 'Vicky - Comercio Exterior',
+  title: "Custom's & Comex CO",
   description: 'Servicios profesionales de comercio exterior. Importación, exportación y asesoramiento integral.',
 }
 
