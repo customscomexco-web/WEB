@@ -27,10 +27,10 @@ export async function POST(request: Request) {
       )
     }
 
-    // Verify page exists
+    // Verify page exists and get slug
     const page = await prisma.page.findUnique({
       where: { id: pageId },
-      select: { id: true },
+      select: { id: true, slug: true },
     })
 
     if (!page) {
@@ -58,12 +58,6 @@ export async function POST(request: Request) {
 
     const section = await prisma.section.create({
       data: sectionData,
-    })
-
-    // Get page slug to revalidate
-    const page = await prisma.page.findUnique({
-      where: { id: pageId },
-      select: { slug: true },
     })
 
     console.log('Section created successfully:', section.id)
