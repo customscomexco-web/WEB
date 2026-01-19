@@ -2,6 +2,8 @@ import { NextResponse } from 'next/server'
 import { prisma } from '@/lib/prisma'
 import { z } from 'zod'
 
+export const dynamic = 'force-dynamic'
+
 const leadSchema = z.object({
   companyName: z.string().min(1),
   cuit: z.string().optional(),

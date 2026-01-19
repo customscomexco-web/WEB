@@ -4,6 +4,7 @@ import { prisma } from '@/lib/prisma'
 import { SectionRenderer } from '@/components/sections/SectionRenderer'
 import { ParallaxScene } from '@/components/parallax/ParallaxScene'
 
+export const dynamic = 'force-dynamic'
 export const revalidate = process.env.NODE_ENV === 'development' ? 0 : 60
 
 async function getPageData(slug: string) {

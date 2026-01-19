@@ -4,6 +4,7 @@ import Image from 'next/image'
 import { prisma } from '@/lib/prisma'
 import { Calendar } from 'lucide-react'
 
+export const dynamic = 'force-dynamic'
 export const revalidate = 60
 
 export const metadata: Metadata = {
