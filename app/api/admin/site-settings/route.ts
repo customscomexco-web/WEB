@@ -24,7 +24,7 @@ export async function GET() {
       settings = await prisma.siteSettings.create({
         data: {
           id: 'default',
-          siteName: "Custom's & Comex CO",
+          siteName: "Customs & Comex Co",
         },
       })
     }

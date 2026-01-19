@@ -8,7 +8,7 @@ export const dynamic = 'force-dynamic'
 export const revalidate = 60
 
 export const metadata: Metadata = {
-  title: "Noticias - Custom's & Comex CO",
+  title: "Noticias - Customs & Comex Co",
   description: 'Últimas noticias y actualizaciones sobre comercio exterior',
 }
 

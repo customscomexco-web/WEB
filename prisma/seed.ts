@@ -26,7 +26,7 @@ async function main() {
     update: {},
     create: {
       id: 'default',
-      siteName: "Custom's & Comex CO",
+      siteName: "Customs & Comex Co",
       primaryColor: '#006d8c',
       whatsappNumber: '+5491112345678',
       address: 'Buenos Aires, Argentina',
@@ -47,7 +47,7 @@ async function main() {
     create: {
       slug: 'home',
       title: 'Inicio',
-      seoTitle: "Custom's & Comex CO | Importación y Exportación",
+      seoTitle: "Customs & Comex Co | Importación y Exportación",
       seoDescription: 'Servicios profesionales de comercio exterior. Importación, exportación y asesoramiento integral.',
       published: true,
     },
@@ -71,7 +71,7 @@ async function main() {
     create: {
       slug: 'sobre-mi',
       title: 'Sobre Mí',
-      seoTitle: "Sobre Mí - Custom's & Comex CO",
+      seoTitle: "Sobre Mí - Customs & Comex Co",
       seoDescription: 'Conoce más sobre mi experiencia en comercio exterior.',
       published: true,
     },
@@ -83,7 +83,7 @@ async function main() {
     create: {
       slug: 'contacto',
       title: 'Contacto',
-      seoTitle: "Contacto - Custom's & Comex CO",
+      seoTitle: "Contacto - Customs & Comex Co",
       seoDescription: 'Contáctanos para más información sobre nuestros servicios.',
       published: true,
     },
@@ -125,7 +125,7 @@ async function main() {
         order: 0,
         visible: true,
         content: {
-          title: "Custom's & Comex CO",
+          title: "Customs & Comex Co",
           subtitle: 'Importación y exportación con experiencia y confianza',
           primaryCta: { text: 'Consultar', link: '/consultar' },
           secondaryCta: { text: 'Conocer Servicios', link: '/servicios' },

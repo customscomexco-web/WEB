@@ -24,10 +24,10 @@ export async function generateMetadata(): Promise<Metadata> {
   const page = await getPageData()
 
   return {
-    title: page?.seoTitle || page?.title || "Custom's & Comex CO",
+      title: page?.seoTitle || page?.title || "Customs & Comex Co",
     description: page?.seoDescription || 'Servicios profesionales de comercio exterior',
     openGraph: {
-      title: page?.seoTitle || page?.title || "Custom's & Comex CO",
+      title: page?.seoTitle || page?.title || "Customs & Comex Co",
       description: page?.seoDescription || 'Servicios profesionales de comercio exterior',
       images: page?.ogImageUrl ? [page.ogImageUrl] : [],
     },

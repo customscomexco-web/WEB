@@ -21,7 +21,7 @@ export function Footer() {
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 sm:gap-8">
           <div className="sm:col-span-2 lg:col-span-1">
             <h3 className="text-white font-bold text-base sm:text-lg mb-3 sm:mb-4">
-              {settings?.siteName || "Custom's & Comex CO"}
+              {settings?.siteName || "Customs & Comex Co"}
             </h3>
             <p className="text-xs sm:text-sm leading-relaxed">
               Servicios profesionales de comercio exterior
@@ -104,7 +104,7 @@ export function Footer() {
         </div>
 
         <div className="mt-6 sm:mt-8 pt-6 sm:pt-8 border-t border-gray-800 text-center text-xs sm:text-sm">
-          <p>&copy; {new Date().getFullYear()} {settings?.siteName || "Custom's & Comex CO"}. Todos los derechos reservados.</p>
+          <p>&copy; {new Date().getFullYear()} {settings?.siteName || "Customs & Comex Co"}. Todos los derechos reservados.</p>
         </div>
       </div>
     </footer>
