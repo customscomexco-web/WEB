@@ -125,7 +125,7 @@ async function main() {
         order: 0,
         visible: true,
         content: {
-          title: 'Comercio Exterior Profesional',
+          title: "Custom's & Comex CO",
           subtitle: 'Importación y exportación con experiencia y confianza',
           primaryCta: { text: 'Consultar', link: '/consultar' },
           secondaryCta: { text: 'Conocer Servicios', link: '/servicios' },
